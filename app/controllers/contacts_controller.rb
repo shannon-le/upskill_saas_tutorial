@@ -15,10 +15,10 @@ class ContactsController < ApplicationController
             #Store form fields via parameters, into variables
             name = params[:contact][:name]
             email = params[:contact][:email]
-            comments = params[:contact][:comments]
+            body = params[:contact][:comments]
             # Plug variables into Contact Mailer
             # Email method and send email
-            ContactMailer.contact_email(name, email, comments).deliver
+            ContactMailer.contact_email(name, email, body).deliver
             # Store success message
             # redirect to new action
             flash[:success] = "Message sent."
