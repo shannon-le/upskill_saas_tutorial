@@ -1,5 +1,5 @@
 class Users::RegistrationsController < Devise::RegistrationsController
-  before_action :select_plan only: :new
+  before_action :select_plan, only: :new
   # Extend default Devise gem behavior so that users signing up with the Pro account (plan ID 2)
   # save with a speical Stripe subsription function.
   # Otherwise Devise signs up user as usual.
